@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF9C1C"
+    tools:context="com.venkata.sai.pavan.phonecop.MainActivityFragment"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/greeting_text"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:textAlignment="viewStart"
+        android:layout_marginLeft="30dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/greetings_string_initializing"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:text="Be Safe"
+        android:textSize="30sp"
+        android:textStyle="italic|bold"
+        android:fontFamily="sans-serif"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_screen">
+    </FrameLayout>
+
+</RelativeLayout>

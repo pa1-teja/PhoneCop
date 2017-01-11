@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="@android:integer/config_longAnimTime"
+     android:transitionOrdering="sequential">
+
+    <fade android:duration="@android:integer/config_mediumAnimTime"
+        android:fadingMode="fade_in_out"
+        android:startDelay="@android:integer/config_mediumAnimTime"/>
+
+</transitionSet>

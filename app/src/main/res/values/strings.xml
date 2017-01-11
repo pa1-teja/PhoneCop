@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">PhoneCop</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!--Welcome screen text strings-->
+    <string name="greetings_string_initializing" translatable="true">Hi there,</string>
+    <string name="welcome_string_initializing" translatable="true">We\'re very happy to be with you in the impromptu situations and we\'re committed to make it
+    as easy as possible to help you acquire as much evidence as possible</string>
+
+    <string name="greetings_string" translatable="true">Hello username</string>
+    <string name="welcome_string" translatable="true">Good to see you here Feel free to customize the settings the way you like</string>
+    <string name="welcome_string_1" translatable="true">It\'s been a long time seeing you We\'ve missed you a lot Hope you\'re doing great \:)\.</string>
+
+
+    <!--fragment tags-->
+    <string name="main_screen_tag">Main Screen Tag</string>
+
+    <!--welcome screen transition settings-->
+    <string name="welcome_screen_text_anim_duration">3000</string>
+    <string name="fragment_change_duration">5000</string>
+
+    <!--Main Screen Strings-->
+
+    <!-- Number of Main Screen View Pager Tabs -->
+    <string name="pager_tabs">2</string>
+
+
+    <!-- ImagesFragmentOfViewPager class Strings-->
+
+    <!--Message displayed when there are no images recorded in the store-->
+    <string name="empty_image_store_message">There are no Image evidences captured.</string>
+
+
+    <!--Message displayed when there are no audio clips recorded in the store-->
+    <string name="empty_audio_store_message">There are no Audio evidences recorded.</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

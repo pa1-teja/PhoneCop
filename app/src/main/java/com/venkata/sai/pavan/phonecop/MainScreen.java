@@ -1,12 +1,17 @@
 package com.venkata.sai.pavan.phonecop;
 
 
+import android.icu.text.DateFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+
+import java.lang.reflect.Field;
+import java.text.Format;
 
 
 /**
@@ -65,12 +70,30 @@ public class MainScreen extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main_screen, container, false);
 
+        getOverflowMenu();
+
         // setting up the View Pager
         mainScreenViewPager = (ViewPager) view.findViewById(R.id.main_screen_view_pager);
         pagerAdapter = new mainScreenPagerAdapter(getFragmentManager());
         mainScreenViewPager.setAdapter(pagerAdapter); // attached the Fragment Pager Adapter to the ViewPager
 
         return view;
+    }
+
+    private void getOverflowMenu(){
+        try
+        {
+            ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
+            Field field = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+
+            if (field != null){
+                field.setAccessible(true);
+                field.setBoolean(viewConfiguration,false);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 }

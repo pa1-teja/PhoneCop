@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
@@ -64,28 +65,43 @@ public class MainActivityFragment extends Fragment {
 
         waitOnWelcomeScreen = new Handler();
 
+        // code that lets user to Tap anywhere on the screen to move from Welcome screen to the Main Screen.
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              moveToMainScreen();
+            }
+        });
+
+
         waitOnWelcomeScreen.postDelayed(new Runnable() {
             @Override
-            public void run() {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    // setting the fragment change transition.
+            public void run() { moveToMainScreen();} }, Long.parseLong(getContext().getString(R.string.fragment_change_duration)));
+            return view;
+        }
+
+    private void moveToMainScreen(){
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // setting the fragment change transition.
 
 //                fragmentTransaction:  replacing welcom screen with main screen
-                    getFragmentManager()
-                            .beginTransaction() // TODO: Null Pointer Exception Occurred here.
+            getFragmentManager()
+                    .beginTransaction() // TODO: Null Pointer Exception Occurred here and set Transition as well.
 //                        .setTransition(R.transition.welcome_screen_out_to_main_screen_in_transition)
-                            .replace(R.id.main_screen,new MainScreen(), getContext().getString(R.string.main_screen_tag))
-                            .addToBackStack(null)
-                            .commit();
-                }
-
-            }
-        }, Long.parseLong(getContext().getString(R.string.fragment_change_duration)));
-
-
-            return view;
-
+                    .replace(R.id.main_screen,new MainScreen(), getContext().getString(R.string.main_screen_tag))
+                    .addToBackStack(null)
+                    .commit();
+        } else {
+            getFragmentManager()
+                    .beginTransaction() // TODO: Null Pointer Exception Occurred here.
+                    .replace(R.id.main_screen,new MainScreen(), getContext().getString(R.string.main_screen_tag))
+                    .addToBackStack(null)
+                    .commit();
         }
+
+    }
+
     }
 
 

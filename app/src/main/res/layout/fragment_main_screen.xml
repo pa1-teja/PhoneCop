@@ -11,22 +11,11 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <android.support.design.widget.AppBarLayout
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/main_screen_app_bar_margin_bottom"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:elevation="20dp"
-            android:contentInsetStart="20dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
+        android:background="@color/colorPrimary"
+        style="@style/MyActionBar" />
 
     <android.support.v4.view.ViewPager
             android:layout_width="match_parent"

@@ -4,14 +4,16 @@ package com.venkata.sai.pavan.phonecop;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 /**
  * Created by KVR on 1/10/2017.
  */
 
-public class mainScreenPagerAdapter extends FragmentPagerAdapter {
+public class mainScreenPagerAdapter extends FragmentStatePagerAdapter{
 
     public static int NUM_PAGES = 2;
+    private static String[] page_headers = {"IMAGES","AUDIO"};
 
     public mainScreenPagerAdapter(FragmentManager fragmentManager){
         super(fragmentManager);
@@ -37,12 +39,7 @@ public class mainScreenPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
 
-        if (position == 0)
-            return "IMAGES";
-        else if (position == 1)
-            return "AUDIO";
-
-        return null;
+        return page_headers[position];
     }
 
     @Override

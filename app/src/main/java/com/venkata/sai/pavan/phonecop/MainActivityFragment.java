@@ -1,7 +1,9 @@
 package com.venkata.sai.pavan.phonecop;
 
+import android.app.ActionBar;
 import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -27,9 +29,8 @@ public class MainActivityFragment extends Fragment {
     private AnimationSet welcomScreen_text_Animation;
     private Handler waitOnWelcomeScreen;
 
-    public synchronized void delay(int seconds) throws InterruptedException {
-        wait(seconds);
-    }
+    private ActionBar actionBar;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,11 +1,15 @@
 package com.venkata.sai.pavan.phonecop;
 
 
+import android.content.Intent;
 import android.icu.text.DateFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -58,6 +62,9 @@ public class MainScreen extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setHasOptionsMenu(true);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -70,7 +77,7 @@ public class MainScreen extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main_screen, container, false);
 
-        getOverflowMenu();
+
 
         // setting up the View Pager
         mainScreenViewPager = (ViewPager) view.findViewById(R.id.main_screen_view_pager);
@@ -80,20 +87,21 @@ public class MainScreen extends Fragment {
         return view;
     }
 
-    private void getOverflowMenu(){
-        try
-        {
-            ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
-            Field field = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
-
-            if (field != null){
-                field.setAccessible(true);
-                field.setBoolean(viewConfiguration,false);
-            }
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main,menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(getContext(), SettingsActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

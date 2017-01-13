@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="App Settings">
+
+        <ListPreference
+            android:title="@string/set_timer_header"
+            android:key="@string/set_timer_key"
+            android:entries="@array/timer_strings_for_users"
+            android:entryValues="@array/timer_values"
+            android:defaultValue="@string/set_timer_3_minutes"
+            android:summary="@string/set_timer_summary_string"></ListPreference>
+
+        <ListPreference
+            android:title="@string/set_trigger_header"
+            android:summary="@string/set_trigger_summary"
+            android:key="@string/set_trigger_key"
+            android:entries="@array/set_trigger_strings_for_users"
+            android:entryValues="@array/set_trigger_strings_for_users_system"
+            android:defaultValue="@string/set_trigger_as_power_button_3_taps"></ListPreference>
+
+        <Preference
+            android:key="@string/user_details_key"
+            android:title="@string/user_details_header"
+            android:summary="@string/user_details_summary">
+
+
+        </Preference>
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

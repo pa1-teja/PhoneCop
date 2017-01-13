@@ -70,6 +70,7 @@ public class MainActivityFragment extends Fragment {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                waitOnWelcomeScreen.removeCallbacksAndMessages(null);
               moveToMainScreen();
             }
         });
@@ -77,9 +78,15 @@ public class MainActivityFragment extends Fragment {
 
         waitOnWelcomeScreen.postDelayed(new Runnable() {
             @Override
-            public void run() { moveToMainScreen();} }, Long.parseLong(getContext().getString(R.string.fragment_change_duration)));
+
+            public void run() {
+                moveToMainScreen();
+            }
+        }, Long.parseLong(getContext().getString(R.string.fragment_change_duration)));
+
             return view;
-        }
+
+    }
 
     private void moveToMainScreen(){
 

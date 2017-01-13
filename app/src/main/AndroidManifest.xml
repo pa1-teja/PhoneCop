@@ -26,6 +26,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.venkata.sai.pavan.phonecop.MainActivity" />
         </activity>
+        <activity
+            android:name=".UserDetailsScreen"
+            android:label="@string/user_details_screen_title"
+            android:parentActivityName=".SettingsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.venkata.sai.pavan.phonecop.SettingsActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -20,14 +20,35 @@
             android:entryValues="@array/set_trigger_strings_for_users_system"
             android:defaultValue="@string/set_trigger_as_power_button_3_taps"></ListPreference>
 
-        <Preference
-            android:key="@string/user_details_key"
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="User and Contact Details">
+
+
+        <com.venkata.sai.pavan.phonecop.userDetailsDialog
+            android:key="@string/user_details_header"
             android:title="@string/user_details_header"
             android:summary="@string/user_details_summary">
 
+        </com.venkata.sai.pavan.phonecop.userDetailsDialog>
 
-        </Preference>
+        <com.venkata.sai.pavan.phonecop.contactListDetails
+            android:key="@string/contacts_list_pref_key"
+            android:title="@string/contacts_list_header"
+            android:summary="@string/contacts_list_summary">
 
+        </com.venkata.sai.pavan.phonecop.contactListDetails>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="License Details">
+
+    <Preference
+        android:title="@string/eula_header"
+        android:key="@string/eula_pref_key"></Preference>
 
     </PreferenceCategory>
 

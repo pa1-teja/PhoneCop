@@ -2,7 +2,6 @@ package com.venkata.sai.pavan.phonecop;
 
 
 import android.content.Intent;
-import android.icu.text.DateFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -11,11 +10,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
-import java.lang.reflect.Field;
-import java.text.Format;
+import com.venkata.sai.pavan.phonecop.SettingsScreen.SettingsActivity;
 
 
 /**

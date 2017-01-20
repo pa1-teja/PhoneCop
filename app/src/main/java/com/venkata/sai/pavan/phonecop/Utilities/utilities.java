@@ -47,40 +47,6 @@ public class utilities {
     }
 
 
-    // This method is used to fetch all the contacts from the contacts App
-    public static void getAllContactsFromContactsApp(Context context){
-        //Todo: has copied code, modify asap.
-
-
-            ContentResolver contactsContentResolver = context.getContentResolver();
-
-            Cursor contactsCursor = contactsContentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-
-            if (contactsCursor.moveToFirst()) {
-                ArrayList contactsInfo = new ArrayList();
-
-                do {
-                    String id = contactsCursor.getString(contactsCursor.getColumnIndex(ContactsContract.Contacts._ID));
-
-                    if (Integer.parseInt(contactsCursor.getString
-                            (contactsCursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
-
-                        Cursor pCur = contactsContentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?", new String[]{id}, null);
-                        while (pCur.moveToNext()) {
-                            String contactNumber = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                            contactsInfo.add(contactNumber);
-                            break;
-                        }
-                        pCur.close();
-                    }
-
-                } while (contactsCursor.moveToNext());
-
-                System.out.println(contactsInfo);
-            }
-
-    }
-
 
     public static String[] userDetailsValidation(String userName, String mobileNumber, String emailId){
 

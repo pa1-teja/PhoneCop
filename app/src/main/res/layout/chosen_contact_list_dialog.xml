@@ -11,21 +11,22 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_add_black_32dp"
-            android:id="@+id/add_contacts_image_button"
-            android:layout_marginRight="34dp"
-            android:layout_marginTop="12dp"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_remove_contacts_circle_black_32dp"
-            android:layout_marginLeft="43dp"
-            android:layout_marginTop="12dp"
-            android:id="@+id/remove_contacts_image_button"/>
+            android:text="ADD CONTACTS"
+            android:layout_margin="12dp"
+            android:id="@+id/add_contacts_button"
+            />
+
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:queryHint="search contact by name"
+            android:id="@+id/contact_search_text"/>
 
 
     </LinearLayout>
@@ -33,18 +34,19 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
         android:layout_below="@+id/contact_list_control_panel"
         android:layout_marginTop="8dp"
         android:id="@+id/divider_line"/>
 
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/divider_line"
         android:layout_marginTop="4dp"
-        android:id="@+id/chosen_contacts_list_view">
-    </ListView>
+        android:id="@+id/chosen_contacts_recycler_view">
+    </android.support.v7.widget.RecyclerView>
 
 
 </RelativeLayout>

@@ -1,13 +1,20 @@
 package com.venkata.sai.pavan.phonecop;
 
+import android.Manifest;
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;import android.view.LayoutInflater;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +22,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.widget.TextView;
+
+import static com.venkata.sai.pavan.phonecop.SettingsScreen.contactListDetails.MY_PERMISSIONS_REQUEST_READ_CONTACTS;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -37,6 +46,17 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+//                        Manifest.permission.READ_CONTACTS);
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_CONTACTS}, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+            }
+         else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("We'll use your contacts to inform them that you're in an emergency situation and need your help immediately.");
+//                builder.setPositiveButton("OK")
+        }
 
         // attaching the greetings strings to a text view.
         greetring_text = (TextView) view.findViewById(R.id.greeting_text);
@@ -99,7 +119,7 @@ public class MainActivityFragment extends Fragment {
 //                        .setTransition(R.transition.welcome_screen_out_to_main_screen_in_transition)
                     .replace(R.id.main_screen,new MainScreen(), getContext().getString(R.string.main_screen_tag))
                     .addToBackStack(null)
-                    .commit();
+                    .commit(); // TODO: java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
         } else {
             getFragmentManager()
                     .beginTransaction() // TODO: Null Pointer Exception Occurred here.
@@ -110,6 +130,10 @@ public class MainActivityFragment extends Fragment {
 
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
+}
 
 

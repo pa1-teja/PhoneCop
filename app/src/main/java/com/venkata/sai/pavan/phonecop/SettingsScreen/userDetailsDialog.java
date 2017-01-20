@@ -1,4 +1,4 @@
-package com.venkata.sai.pavan.phonecop;
+package com.venkata.sai.pavan.phonecop.SettingsScreen;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.venkata.sai.pavan.phonecop.R;
 import com.venkata.sai.pavan.phonecop.Utilities.utilities;
 
 import java.util.Set;

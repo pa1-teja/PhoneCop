@@ -27,19 +27,19 @@
         android:title="User and Contact Details">
 
 
-        <com.venkata.sai.pavan.phonecop.userDetailsDialog
+        <com.venkata.sai.pavan.phonecop.SettingsScreen.userDetailsDialog
             android:key="@string/user_details_header"
             android:title="@string/user_details_header"
             android:summary="@string/user_details_summary">
 
-        </com.venkata.sai.pavan.phonecop.userDetailsDialog>
+        </com.venkata.sai.pavan.phonecop.SettingsScreen.userDetailsDialog>
 
-        <com.venkata.sai.pavan.phonecop.contactListDetails
+        <com.venkata.sai.pavan.phonecop.SettingsScreen.contactListDetails
             android:key="@string/contacts_list_pref_key"
             android:title="@string/contacts_list_header"
             android:summary="@string/contacts_list_summary">
 
-        </com.venkata.sai.pavan.phonecop.contactListDetails>
+        </com.venkata.sai.pavan.phonecop.SettingsScreen.contactListDetails>
 
 
     </PreferenceCategory>

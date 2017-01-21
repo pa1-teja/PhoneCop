@@ -4,7 +4,7 @@
               GNU GENERAL PUBLIC LICENSE
                        Version 3, 21 June 2017
 
- Copyright (C) 20017 Kona Venkata Sai Pavan Teja
+ Copyright (C) 2017 Kona Venkata Sai Pavan Teja
  
  Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0 (the "License");
 you may not use this file except in compliance with the License.

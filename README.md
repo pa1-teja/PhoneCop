@@ -2,7 +2,7 @@
 
 # Copyright
               GNU GENERAL PUBLIC LICENSE
-                       Version 3, 21 June 2017
+                       Version 3, 21 January 2017
 
  Copyright (C) 2017 Kona Venkata Sai Pavan Teja
  
